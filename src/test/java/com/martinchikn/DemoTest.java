@@ -28,7 +28,8 @@ public class DemoTest extends TestBase {
 
         step("Open registration form", () -> {
             open("/automation-practice-form");
-            zoom(0.5);
+            executeJavaScript("$('footer').remove()");
+            executeJavaScript("$('#fixedban').remove()");
         });
         step("Fill registration form", () -> {
             $("#firstName").setValue(fname);
